@@ -56,12 +56,13 @@ module.exports = {
 
       // Fonts
       {
-        test: /\.(ttf|eot|woff|woff2)$/,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
-            loader: "url-loader?limit=100000",
+            loader: "file-loader",
             options: {
-              outputPath: "assets/fonts/",
+              name: "[name].[ext]",
+              outputPath: "fonts/",
             },
           },
         ],

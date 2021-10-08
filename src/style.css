@@ -1,17 +1,17 @@
-@font-face {
-  font-family: "InputMono-Regular";
-  src: url("./assets/font/InputMono-Regular.ttf") format("ttf");
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
+@font-face {
+  font-family: InputMono-Regular;
+  src: url("fonts/InputMono-Regular.ttf");
+}
+
 html,
 body {
   height: 100vh;
-  font-family: "InputMono-Regular";
+  font-family: InputMono-Regular;
 }
 
 .webgl {
