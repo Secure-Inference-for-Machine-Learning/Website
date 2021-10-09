@@ -1,0 +1,40 @@
+@font-face {
+  font-family: InputMono-Regular;
+  src: url("../fonts/InputMono-Regular.ttf");
+}
+@font-face {
+  font-family: InputMono-Bold;
+  src: url("../fonts/InputMono-Bold.ttf");
+}
+@font-face {
+  font-family: InputMono-Italic;
+  src: url("../fonts/InputMono-Italic.ttf");
+}
+@font-face {
+  font-family: InputMono-BoldItalic;
+  src: url("../fonts/InputMono-BoldItalic.ttf");
+}
+
+html,
+body {
+  font-family: InputMono-Regular;
+}
+
+p {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 0 1px;
+}
+
+.bold {
+  font-family: InputMono-Bold;
+}
+
+.italic {
+  font-family: InputMono-Italic;
+}
+
+.bold-italic {
+  font-family: InputMono-BoldItalic;
+}

@@ -1,0 +1,14 @@
+.app__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.app__container__title {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+}
