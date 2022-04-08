@@ -2,6 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #0d0c1f;
+}
+@font-face {
+  font-family: "EuclidCircular";
+  src: url("../public/fonts/EuclidCircularA-Bold.woff2");
+}
+
 .text-glow {
   text-shadow: 0 0 80px rgb(192 219 255 / 75%), 0 0 32px rgb(65 120 255 / 24%);
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+button {
+  background-color: rgba(111, 76, 255, 0.8);
+}
+
+button:hover {
+  box-shadow: 0 0 32px 0 rgb(88 47 213 / 32%), 0 0 8px 0 rgb(88 47 213 / 48%);
+}
+
+.pc {
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

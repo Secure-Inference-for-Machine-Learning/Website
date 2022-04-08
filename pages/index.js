@@ -1,10 +1,8 @@
-import fs from "fs";
-import matter from "gray-matter";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home({ posts }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -12,53 +10,30 @@ export default function Home({ posts }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <div className="grid grid-cols-2 md:grid-cols-2  justify-between w-screen p-4 md:p-0">
-        <div className="col-span-1">
-          <h1 className="text-9xl font-bold">Ciao</h1>
+      <div className="container h-full flex justify-center gap-10 lg:justify-between items-center flex-col lg:flex-row w-screen p-4 md:p-0">
+        <div className="lg:w-1/2">
+          <h1 className="text-glow text-white text-5xl md:text-7xl xl:text-8xl font-bold mb-10">
+            Secure Inference for Machine Learning
+          </h1>
+
+          <Link href="/blog">
+            <button className="text-white font-bold py-2 px-4 rounded">Read the blog</button>
+          </Link>
         </div>
-        {posts.map(({ slug, frontmatter }) => (
-          <div
-            key={slug}
-            className="border border-gray-200 m-2 rounded-xl shadow-lg overflow-hidden flex flex-col"
-          >
-            <Link href={`/post/${slug}`}>
-              <a>
-                <Image
-                  layout="responsive"
-                  priority={true}
-                  objectFit={"cover"}
-                  width={650}
-                  height={340}
-                  alt={frontmatter.title}
-                  src={`/images/${frontmatter.socialImage}` || "/images/default.jpg"}
-                />
-                <h1 className="text-glow p-4">{frontmatter.title}</h1>
-              </a>
-            </Link>
+        <div className="w-2/3 lg:w-1/2 flex justify-center items-center">
+          <div className="pc w-full">
+            <Image
+              layout="responsive"
+              priority={true}
+              objectFit={"contain"}
+              width={100}
+              height={100}
+              alt={"pc image"}
+              src="/images/pc.png"
+            />
           </div>
-        ))}
+        </div>
       </div>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const files = fs.readdirSync("posts");
-
-  const posts = files.map((fileName) => {
-    const slug = fileName.replace(".md", "");
-    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
-    const { data: frontmatter } = matter(readFile);
-
-    return {
-      slug,
-      frontmatter,
-    };
-  });
-
-  return {
-    props: {
-      posts,
-    },
-  };
 }
