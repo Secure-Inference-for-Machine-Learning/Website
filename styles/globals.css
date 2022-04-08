@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body,
+header {
   background-color: #0d0c1f;
 }
 @font-face {
@@ -45,4 +46,54 @@ button:hover {
   100% {
     transform: translateY(0px);
   }
+}
+
+.card {
+  margin: 1rem;
+  padding: 1rem;
+  height: 300px;
+  width: 100%;
+  max-width: 80vw;
+  min-width: 200px;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+@media (min-width: 900px) {
+  .card {
+    max-width: 600px;
+  }
+}
+
+.bg-blur {
+  overflow: hidden;
+}
+.bg-blur::before {
+  content: "";
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "EuclidCircular";
+  font-weight: bold;
+}
+
+p {
+  font-family: sans-serif;
+  color: white;
 }

@@ -6,15 +6,17 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen">
       {router.pathname !== "/" && (
-        <header className="w-screen fixed bg-white h-7 py-4">
-          <div className="container pl-5 flex justify-start">
+        <header className="w-full sticky h-20 pt-5 pb-25">
+          <div className=" w-full text-center">
             <Link href="/">
-              <a className="text-lg font-medium">Secure Inference for Machine Learning</a>
+              <a className=" text-l md:text-xl text-white font-medium">
+                Malware detection: computer vision vs malware static analysis
+              </a>
             </Link>
           </div>
         </header>
       )}
-      <main className="container mx-auto flex w-screen h-screen">{children}</main>
+      {children}
     </div>
   );
 }

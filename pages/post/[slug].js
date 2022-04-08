@@ -4,8 +4,8 @@ import md from "markdown-it";
 
 export default function PostPage({ frontmatter, content }) {
   return (
-    <div className="prose mx-auto">
-      <h1>{frontmatter.title}</h1>
+    <div className="p-10 prose mx-auto">
+      <h1 style={{ color: "rgba(111, 76, 255, 0.8)" }}>{frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
     </div>
   );
